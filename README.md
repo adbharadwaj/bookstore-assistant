@@ -1,6 +1,9 @@
 # bookstore-assistant
 Chrome extension for University Bookstore at Virginia Tech - Course project for Usability Engineering
 
+
+![Google Sample](google-search-sweatshirt-example.gif)
+
 ## How to install
 
 - [Download](https://github.com/adbharadwaj/bookstore-assistant/archive/master.zip) the bookstore assistant extension.
