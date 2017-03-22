@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "bookstore-assistant",
+  "version": "0.1.0",
+  "description": "Assistant for VT Bookstore",
+  "content_scripts": [
+    {
+      "css": [
+        "css/style.css"
+      ],
+      "js": [
+        "js/main.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ]
+}
