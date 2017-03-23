@@ -1,19 +1,14 @@
 /**
  * Created by adb on 22/03/17.
  */
-function getParameterByName(name, url) {
-    if (!url) {
-        url = window.location.href;
-    }
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
 
-var value = getParameterByName('q');
+var value = null;
+
+if (window.location.href.indexOf('google.com') != -1) {
+    value = window.location.href.match(/q=([^&]*)/);
+} else if (window.location.href.indexOf('amazon.com') != -1) {
+    value = window.location.href.match(/keywords=([^&]*)/);
+}
 
 if (value) {
     var html = document.querySelector("html");
@@ -22,7 +17,7 @@ if (value) {
     var body = document.querySelector('body');
     var iframe = document.createElement("iframe");
     iframe.id   = "bookstoreAssistant";
-    iframe.src = "https://quiet-mountain-63884.herokuapp.com/?term="+value;
+    iframe.src = "https://quiet-mountain-63884.herokuapp.com/?term="+value[1];
     iframe.target='_top';
     iframe.width="100%";
     iframe.height="100%";
