@@ -3,6 +3,9 @@
   "name": "bookstore-assistant",
   "version": "0.1.0",
   "description": "Assistant for VT Bookstore",
+  "background": {
+    "scripts":["js/background.js"]
+  },
   "content_scripts": [
     {
       "css": [
